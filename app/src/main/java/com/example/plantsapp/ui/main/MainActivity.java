@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     static DBHelper plants_db;
     static ViewPager viewPager;
     static SectionsPagerAdapter sectionsPagerAdapter;
-    int SECONDS_AMOUNT = 60 * 60;
+    int SECONDS_ALARM = 60 * 60;
+    int SECONDS_THREAD = 60;
     public static List<Plant> plants;
     public static String filterText;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     while (true) {
-                        Thread.sleep(SECONDS_AMOUNT * 1000);
+                        Thread.sleep(SECONDS_THREAD * 1000);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         long firstMillis = System.currentTimeMillis();
         AlarmManager alarm = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         alarm.setRepeating(AlarmManager.RTC_WAKEUP, firstMillis,
-                1000 * SECONDS_AMOUNT, pIntent);
+                1000 * SECONDS_ALARM, pIntent);
     }
 
     public static void update(){

@@ -51,9 +51,9 @@ public class AlarmReceiver extends BroadcastReceiver {
     protected void Notify(int counter, Context context){
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context, CHANNEL_ID)
-                        .setContentTitle("Не забувайте про ваші рослини.")
+                        .setContentTitle("Don't forget about your plants.")
                         .setSmallIcon(R.drawable.ic_stat_dead_plant_icon_small)
-                        .setContentText("Деякі з віших рослин потребують догляду!")
+                        .setContentText("Some of your plants needs to be watered!")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setNumber(counter)
                         .setColor(context.getResources().getColor(R.color.black));

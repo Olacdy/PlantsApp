@@ -80,10 +80,10 @@ public class CreatePlantActivity extends AppCompatActivity {
                     }
                     MainActivity.plants.add(new_plant);
                     MainActivity.update();
-                    Toast.makeText(getApplicationContext(), "Рослину успішно додано.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Plant is added successfully.", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception ex){
-                    Toast.makeText(getApplicationContext(), "Рослину не додано.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Plant is not added.", Toast.LENGTH_SHORT).show();
                 }
                 finish();
             }

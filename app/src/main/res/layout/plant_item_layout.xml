@@ -23,7 +23,7 @@
         android:layout_height="33dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:text="Назва рослини"
+        android:text="Name of a plant"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/plantImageView"
         app:layout_constraintTop_toTopOf="@+id/plantImageView" />

@@ -99,11 +99,5 @@ public class Plant {
         double percentage = ((milsec_till_next_watering / TimeUnit.DAYS.toMillis(this.days_before_watering))) * 100;
         percentage = (percentage <= 0) ? 0 : percentage;
         return (int) percentage;
-        /*
-        double days = TimeUnit.DAYS.convert((this.nextWatering.getTime() - new Date().getTime()), TimeUnit.MILLISECONDS);
-        int percentage = (int)((((days + 1) / (double) this.days_before_watering)) * 100);
-        percentage = (percentage <= 0) ? 0 : percentage;
-        return percentage;
-         */
     }
 }

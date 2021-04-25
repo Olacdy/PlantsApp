@@ -24,7 +24,7 @@
                 android:layout_height="48dp"
                 android:font="@font/roboto"
                 android:gravity="center"
-                android:text="Додавання рослини"
+                android:text="Plants adding"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="normal" />
@@ -38,7 +38,7 @@
             android:layout_marginStart="88dp"
             android:layout_marginLeft="88dp"
             android:layout_marginTop="16dp"
-            android:text="Додати зображення"
+            android:text="Add image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add_plant_appbar" />
 
@@ -49,7 +49,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="268dp"
-            android:text="Зберегти рослину"
+            android:text="Save plant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add_image_button" />
 
@@ -62,7 +62,7 @@
             android:layout_marginRight="128dp"
             android:font="@font/roboto"
             android:gravity="center"
-            android:text="Назва рослини"
+            android:text="Name of a plant"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="normal"
@@ -71,12 +71,12 @@
 
         <TextView
             android:id="@+id/days_before_watering_textview"
-            android:layout_width="129dp"
-            android:layout_height="28dp"
+            android:layout_width="131dp"
+            android:layout_height="36dp"
             android:layout_marginTop="64dp"
             android:font="@font/roboto"
             android:gravity="center"
-            android:text="Частота догляду"
+            android:text="Watering frequency (days)"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="normal"

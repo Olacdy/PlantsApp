@@ -38,7 +38,7 @@ public class AllPlantsFragment extends PlantsFragment {
                 int plant_id = MainActivity.plants.indexOf(adapter.getCurrentPlants().get(position));
                 MainActivity.plants.remove(plant_id);
                 MainActivity.update();
-                Toast.makeText(getContext(), "Рослину успішно видалено.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Plant is deleted successfully.", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
