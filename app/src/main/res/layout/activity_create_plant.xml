@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/add_plant_appbar"
+
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/gradient_upper"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:font="@font/roboto"
+                android:gravity="center"
+                android:text="Додавання рослини"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <Button
+            android:id="@+id/add_image_button"
+            android:layout_width="185dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="16dp"
+            android:text="Додати зображення"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_plant_appbar" />
+
+        <Button
+            android:id="@+id/save_plant_button"
+            android:layout_width="290dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="268dp"
+            android:text="Зберегти рослину"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_image_button" />
+
+        <TextView
+            android:id="@+id/plant_name_textview"
+            android:layout_width="122dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginRight="128dp"
+            android:font="@font/roboto"
+            android:gravity="center"
+            android:text="Назва рослини"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/add_image_button"
+            app:layout_constraintTop_toBottomOf="@+id/add_image_button" />
+
+        <TextView
+            android:id="@+id/days_before_watering_textview"
+            android:layout_width="129dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="64dp"
+            android:font="@font/roboto"
+            android:gravity="center"
+            android:text="Частота догляду"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/plant_name_textview"
+            app:layout_constraintTop_toBottomOf="@+id/plant_name_textview" />
+
+        <EditText
+            android:id="@+id/editTextWateringFrequency"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="44dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/editTextPlantName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPlantName" />
+
+        <EditText
+            android:id="@+id/editTextPlantName"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="48dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/plant_name_textview"
+            app:layout_constraintTop_toBottomOf="@+id/add_image_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
