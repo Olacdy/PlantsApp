@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 public class utils {
 
@@ -75,13 +76,9 @@ public class utils {
         Bitmap default_plant_img = BitmapFactory.decodeResource(context.getResources(), R.mipmap.plant);
         List<Plant> list = new ArrayList<Plant>();
         Plant cactus = new Plant("Cactus", default_plant_img, 2);
-        Plant rose = new Plant("Rose", default_plant_img, 6);
-        Plant gladiolus = new Plant("Gladiolus", default_plant_img, 6);
-        Plant orchidaceae = new Plant("Orchidaceae", default_plant_img, 6);
-        //For demonstration purposes
-        gladiolus.refreshDemo();
-        rose.refreshDemo();
-        orchidaceae.refreshDemo();
+        Plant rose = new Plant("Rose", default_plant_img, 6, Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime());
+        Plant gladiolus = new Plant("Gladiolus", default_plant_img, 6, Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime());
+        Plant orchidaceae = new Plant("Orchidaceae", default_plant_img, 6, Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime());
 
         orchidaceae.update();
         cactus.update();

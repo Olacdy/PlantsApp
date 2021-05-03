@@ -17,4 +17,3 @@ public abstract class PlantsFragment extends Fragment {
 
     public void update() { }
 }
-

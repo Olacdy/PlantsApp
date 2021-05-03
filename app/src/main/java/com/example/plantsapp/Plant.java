@@ -83,17 +83,6 @@ public class Plant {
         this.nextWatering = c.getTime();
     }
 
-    //For demonstration purposes
-    public void refreshDemo(){
-        this.nextWatering = Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime();
-        System.out.println(this.nextWatering);
-        Calendar c = Calendar.getInstance();
-        c.setTime(this.nextWatering);
-        c.add(Calendar.DATE, this.days_before_watering - 15);
-        this.nextWatering = c.getTime();
-        System.out.println(this.nextWatering);
-    }
-
     public int getRemainingPercentage() {
         double milsec_till_next_watering = (this.nextWatering.getTime() - new Date().getTime());
         double percentage = ((milsec_till_next_watering / TimeUnit.DAYS.toMillis(this.days_before_watering))) * 100;

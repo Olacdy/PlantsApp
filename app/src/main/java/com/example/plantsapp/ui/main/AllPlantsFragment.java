@@ -50,10 +50,6 @@ public class AllPlantsFragment extends PlantsFragment {
         return new ArrayList<>(allplants);
     }
 
-    public void filter(){
-        adapter.getFilter().filter(filterText);
-    }
-
     public void update() {
         all_plants = getPlants(MainActivity.plants);
         adapter.update(all_plants);
