@@ -32,8 +32,5 @@
             android:name="com.example.plantsapp.AlarmReceiver"
             android:process=":remote" >
         </receiver>
-        <service
-            android:name="com.example.plantsapp.NotificationService"
-            android:exported="false" />
     </application>
 </manifest>

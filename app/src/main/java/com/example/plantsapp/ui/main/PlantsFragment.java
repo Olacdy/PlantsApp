@@ -8,7 +8,7 @@ import com.example.plantsapp.Plant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlantsFragment extends Fragment {
+public abstract class PlantsFragment extends Fragment {
     public CustomListAdapter adapter;
 
     protected List<Plant> getPlants(List<Plant> all_plants){
