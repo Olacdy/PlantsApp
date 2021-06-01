@@ -29,8 +29,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             if (!plant.isStatus()) counter++;
         }
         if (counter > 0 && !isActivityRunning(MainActivity.class, context)) Notify(counter, context);
-        //Intent i = new Intent(context, NotificationService.class);
-        //context.startService(i);
     }
 
 

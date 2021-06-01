@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,7 +63,10 @@ public class CreatePlantActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (plantName.getText().toString().equals("")) throw new Exception("No plant name!");
+                    if(TextUtils.isEmpty(plantName.getText().toString())) {
+                        plantName.setError("No plant name!");
+                        return;
+                    }
                     if (plantImage == null) {
                         if (wateringFrequency.getText().toString().equals(""))
                             new_plant = new Plant(plantName.getText().toString(), BitmapFactory.decodeResource(getResources(),

@@ -10,7 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.CourseWorkTest.AppBarOverlay">
+        android:theme="@style/Theme.PlantApp.AppBarOverlay">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
@@ -23,7 +23,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="normal"
-            app:defaultQueryHint="Зайти рослину..." />
+            app:defaultQueryHint="Find plant..." />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
