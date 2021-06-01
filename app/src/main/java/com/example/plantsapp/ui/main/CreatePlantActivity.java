@@ -68,7 +68,7 @@ public class CreatePlantActivity extends AppCompatActivity {
                         return;
                     }
                     if (plantImage == null) {
-                        if (wateringFrequency.getText().toString().equals(""))
+                        if (TextUtils.isEmpty(wateringFrequency.getText().toString()))
                             new_plant = new Plant(plantName.getText().toString(), BitmapFactory.decodeResource(getResources(),
                                     R.mipmap.plant), 1);
                         else {
@@ -76,7 +76,7 @@ public class CreatePlantActivity extends AppCompatActivity {
                                     R.mipmap.plant), Integer.parseInt(wateringFrequency.getText().toString()));
                         }
                     } else {
-                        if (wateringFrequency.getText().toString().equals(""))
+                        if (TextUtils.isEmpty(wateringFrequency.getText().toString()))
                             new_plant = new Plant(plantName.getText().toString(), plantImage, 1);
                         else {
                             new_plant = new Plant(plantName.getText().toString(), plantImage, Integer.parseInt(wateringFrequency.getText().toString()));
