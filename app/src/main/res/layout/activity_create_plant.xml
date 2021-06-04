@@ -35,22 +35,20 @@
             android:id="@+id/add_image_button"
             android:layout_width="185dp"
             android:layout_height="100dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="90dp"
             android:text="Add image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_plant_appbar" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/save_plant_button"
             android:layout_width="290dp"
             android:layout_height="86dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="268dp"
+            android:layout_marginTop="250dp"
             android:text="Save plant"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add_image_button" />
 
         <TextView
