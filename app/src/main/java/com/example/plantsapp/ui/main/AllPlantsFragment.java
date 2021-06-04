@@ -35,9 +35,7 @@ public class AllPlantsFragment extends PlantsFragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View plantView, int position, long id) {
-                int plant_id = MainActivity.plants.indexOf(adapter.getCurrentPlants().get(position));
-                MainActivity.plants.remove(plant_id);
-                MainActivity.update();
+                MainActivity.deletePlant(adapter.getCurrentPlants().get(position));
                 Toast.makeText(getContext(), "Plant is deleted successfully.", Toast.LENGTH_SHORT).show();
                 return true;
             }

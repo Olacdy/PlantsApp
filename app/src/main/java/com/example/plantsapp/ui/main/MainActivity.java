@@ -130,11 +130,27 @@ public class MainActivity extends AppCompatActivity {
                 1000 * SECONDS_ALARM, pIntent);
     }
 
+    public static void insertPlant(Plant plant){
+        MainActivity.plants.add(plant);
+        MainActivity.plants_db.insertPlant(plant);
+        MainActivity.update();
+    }
+
+    public static void deletePlant(Plant plant){
+        MainActivity.plants.remove(plant);
+        MainActivity.plants_db.deletePlant(plant.getUniqueId());
+        MainActivity.update();
+    }
+
+    public static void refreshPlant(Plant plant){
+        MainActivity.plants.get(MainActivity.plants.indexOf(plant)).refresh();
+        MainActivity.update();
+    }
+
     public static void update(){
-        plants_db.deleteAll();
         for (Plant plant : plants) {
             plant.update();
-            plants_db.insertPlant(plant);
+            plants_db.updatePlant(plant.getUniqueId(), plant);
         }
         updatePlantsFragments();
     }

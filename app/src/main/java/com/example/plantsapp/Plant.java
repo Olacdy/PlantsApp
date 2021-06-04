@@ -5,14 +5,26 @@ import android.graphics.Bitmap;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class Plant {
+
+    private String UniqueId;
     private String plant_name;
     private Bitmap plantImage;
     private int days_before_watering = 1;
     private boolean status = true;
     private Date nextWatering;
+
+    public Plant(String uniqueId, String plant_name, Bitmap plantImage, int days_before_watering, Date nextWatering){
+        this.UniqueId = uniqueId;
+        this.plant_name = plant_name;
+        this.plantImage = plantImage;
+        this.days_before_watering = days_before_watering;
+        this.nextWatering = nextWatering;
+        this.update();
+    }
 
     public Plant(String plant_name, Bitmap plantImage, int days_before_watering, Date nextWatering)  {
         this(plant_name, plantImage, days_before_watering);
@@ -21,11 +33,20 @@ public class Plant {
     }
 
     public Plant(String plant_name, Bitmap plantImage, int days_before_watering)  {
+        this.UniqueId = UUID.randomUUID().toString();
         this.plant_name = plant_name;
         this.plantImage = plantImage;
         this.days_before_watering = days_before_watering;
         if (this.days_before_watering <= 0) this.days_before_watering = 1;
         this.refresh();
+    }
+
+    public String getUniqueId() {
+        return UniqueId;
+    }
+
+    public void setUniqueId(String uniqueId) {
+        UniqueId = uniqueId;
     }
 
     public String getPlant_name() {

@@ -33,8 +33,7 @@ public class DeadPlantsFragment extends PlantsFragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View plantView, int position, long id) {
-                MainActivity.plants.get(MainActivity.plants.indexOf(adapter.getCurrentPlants().get(position))).refresh();
-                MainActivity.update();
+                MainActivity.refreshPlant(adapter.getCurrentPlants().get(position));
                 return true;
             }
         });

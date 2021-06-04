@@ -82,8 +82,7 @@ public class CreatePlantActivity extends AppCompatActivity {
                             new_plant = new Plant(plantName.getText().toString(), plantImage, Integer.parseInt(wateringFrequency.getText().toString()));
                         }
                     }
-                    MainActivity.plants.add(new_plant);
-                    MainActivity.update();
+                    MainActivity.insertPlant(new_plant);
                     Toast.makeText(getApplicationContext(), "Plant is added successfully.", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception ex){

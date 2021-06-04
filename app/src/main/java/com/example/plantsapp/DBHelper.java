@@ -23,10 +23,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table Plants(id integer primary key AUTOINCREMENT, name TEXT, watering_frequency integer, image text, next_watering int)");
+        DB.execSQL("create Table Plants(id TEXT primary key, name TEXT, " +
+                "watering_frequency INTEGER, image TEXT, next_watering INTEGER)");
         List<Plant> plants = utils.getDummyList(this.context);
         for (Plant plant: plants) {
-            ContentValues contentValues=new ContentValues();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("id", plant.getUniqueId());
             contentValues.put("name", plant.getPlant_name());
             contentValues.put("watering_frequency", plant.getDays_before_watering());
             contentValues.put("next_watering", plant.getNextWatering().getTime());
@@ -43,6 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public Boolean insertPlant(Plant plant) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("id", plant.getUniqueId());
         contentValues.put("name", plant.getPlant_name());
         contentValues.put("watering_frequency", plant.getDays_before_watering());
         contentValues.put("next_watering", plant.getNextWatering().getTime());
@@ -57,16 +60,17 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public Boolean updatePlant(int id, Plant plant) {
+    public Boolean updatePlant(String id, Plant plant) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("id", plant.getUniqueId());
         contentValues.put("name", plant.getPlant_name());
         contentValues.put("watering_frequency", plant.getDays_before_watering());
         contentValues.put("next_watering", plant.getNextWatering().getTime());
         contentValues.put("image", BitMapToString(plant.getPlantImage()));
-        Cursor cursor = DB.rawQuery("Select * from Plants where id = ?", new String[]{ Integer.toString(id) });
+        Cursor cursor = DB.rawQuery("Select * from Plants where id = ?", new String[]{ id });
         if (cursor.getCount() > 0) {
-            long result = DB.update("Plants", contentValues, "id = ?", new String[]{ Integer.toString(id)});
+            long result = DB.update("Plants", contentValues, "id = ?", new String[]{ id });
             if (result == -1) {
                 return false;
             } else {
@@ -77,12 +81,12 @@ public class DBHelper extends SQLiteOpenHelper {
         }}
 
 
-    public Boolean deletePlant(int id)
+    public Boolean deletePlant(String id)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Plants where id = ?", new String[]{ Integer.toString(id) });
+        Cursor cursor = DB.rawQuery("Select * from Plants where id = ?", new String[]{ id });
         if (cursor.getCount() > 0) {
-            long result = DB.delete("Plants", "id = ?", new String[]{Integer.toString(id)});
+            long result = DB.delete("Plants", "id = ?", new String[]{ id });
             DB.close();
             if (result == -1) {
                 return false;
@@ -109,7 +113,11 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(Long.parseLong(cursor.getString(4)));
-                Plant plant = new Plant(cursor.getString(1), StringToBitMap(cursor.getString(3)), Integer.parseInt(cursor.getString(2)), calendar.getTime()) ;
+                Plant plant = new Plant(
+                        cursor.getString(0),
+                        cursor.getString(1),
+                        StringToBitMap(cursor.getString(3)),
+                        Integer.parseInt(cursor.getString(2)), calendar.getTime());
 
                 plants_list.add(plant);
             } while (cursor.moveToNext());
