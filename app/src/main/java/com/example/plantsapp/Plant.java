@@ -81,6 +81,36 @@ public class Plant {
         this.status = status;
     }
 
+    public boolean getStatusFromString(String input){
+        boolean isShown = false;
+        String filteredPattern = input.trim().toLowerCase();
+        if (filteredPattern == "watered"
+                || filteredPattern.contains("healthy")
+                || filteredPattern.contains("do not need watering")
+                || filteredPattern.contains("don't need watering")
+                || filteredPattern.contains("watered")
+                || filteredPattern.contains("don't need water")
+                || filteredPattern.contains("do not need water")
+                || filteredPattern.contains("water")){
+            if (this.isStatus())
+                isShown = true;
+            else isShown = false;
+        }
+        if (filteredPattern.contains("not watered")
+                || filteredPattern.contains("not healthy")
+                || filteredPattern.contains("unhealthy")
+                || filteredPattern.contains("needs watering")
+                || filteredPattern.contains("need watering")
+                || filteredPattern.contains("need water")
+                || filteredPattern.contains("needs water")
+                || filteredPattern.contains("not water")
+                || filteredPattern.contains("no water"))
+            if (this.isStatus())
+                isShown = false;
+            else isShown = true;
+        return isShown;
+    }
+
     public Date getNextWatering(){
         return this.nextWatering;
     }

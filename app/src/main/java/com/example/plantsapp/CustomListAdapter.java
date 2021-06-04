@@ -96,7 +96,9 @@ public class CustomListAdapter extends BaseAdapter implements Filterable {
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Plant plant : plantsListFull) {
-                    if (plant.getPlant_name().toLowerCase().contains(filterPattern)) {
+                    if (plant.getPlant_name().toLowerCase().contains(filterPattern) ||
+                        plant.getStatusFromString(filterPattern)
+                    ) {
                         filteredList.add(plant);
                     }
                 }
