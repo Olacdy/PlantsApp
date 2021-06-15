@@ -12,9 +12,9 @@ Contents
 
 ## Description
 
-Rooms plants application allows users to keep records of their room plants, set plant photo, name and watering frequency. Application will automatically calculate remaining time and rearrange plant to section of plants that need watering session.
+Rooms plants application allows users to keep records of their room plants, set plant photo, name, and watering frequency. The application will automatically calculate the remaining time and rearrange the plant to a section of plants that need a watering session.
 
-Users will be notified if there is some unwatered plants left, so they don't need to keep in mind every other information about their plants.
+Users will be notified if there are some unwatered plants left, so they don't need to keep in mind every other information about their plants.
 
 [Back To The Top](#plants-app)
 
@@ -24,37 +24,37 @@ Users will be notified if there is some unwatered plants left, so they don't nee
 
 #### Installation
 
-To give it a try by yourself you can download whole repository and open this project in Android Studio to set up application on Virtual Device or you can download .apk file and install it on your Android device.
+To give it a try by yourself you can download the whole repository and open this project in Android Studio to set up the application on Virtual Device or you can download the .apk file and install it on your Android device.
 
 [Back To The Top](#plants-app)
 
 #### Use Example
 
-On first start there will be 4 default record (Cactus, Rose, Gladiolus and Orchidaceae), with which user can work as they were created by them:
+At first start there will be 4 default record (Cactus, Rose, Gladiolus, and Orchidaceae), with which user can work as they were created by them:
 
 ![1](https://user-images.githubusercontent.com/1499751/120859826-72156f00-c58d-11eb-8a9e-98593d01bbf2.PNG)
 
-There are two frames, in first one there are all of the user records this is where user can delete plants, and there is second frame on which user can refresh remaining time (i.e. water the plant) by long pressing on desired record: 
+There are two frames, in the first one there are all of the user records this is where the user can delete plants, and there is the second frame on which the user can refresh the remaining time (i.e. water the plant) by long pressing on the desired record: 
 
 ![2](https://user-images.githubusercontent.com/1499751/120861406-f1a43d80-c58f-11eb-90d6-5505f413d516.PNG)
 
-To add a new plant user should press FAB button with a "plus" symbol and enter plant data, if user didn't specified image a default one will be setted:
+To add a new plant user should press the FAB button with a "plus" symbol and enter plant data, if the user didn't specify an image a default one will be set:
 
 ![3](https://user-images.githubusercontent.com/1499751/120861544-23b59f80-c590-11eb-8867-ce51d07f4f47.PNG)
 
-There is only required field it is name of a plant, if user didn't enter it in, an error will appeal in name field:
+There is only one required field it is the name of a plant, if the user didn't enter it in, an error will appeal in the name field:
 
 ![4](https://user-images.githubusercontent.com/1499751/120861775-8444dc80-c590-11eb-9702-77d74904a07a.PNG)
 
-After entering plant data and pressing ***"Save plant"*** button, a new plant with full remaining time will appear in first frame:
+After entering plant data and pressing ***"Save plant"*** button, a new plant with full remaining time will appear in the first frame:
 
 ![5](https://user-images.githubusercontent.com/1499751/120862019-eac9fa80-c590-11eb-8ce5-64004fb124e1.PNG)
 
-To navigate between records user can use search tool, where the name or state can be specified and filtered:
+To navigate between records user can use a search tool, where the name or state can be specified and filtered:
 
 ![6](https://user-images.githubusercontent.com/1499751/120862181-341a4a00-c591-11eb-92f2-736db2248720.PNG)
 
-If there are plants that needs watering and application is closed than every hour a notification will appear:
+If there are plants that need watering and application is closed then every hour notification will appear:
 
 ![7](https://user-images.githubusercontent.com/1499751/120862317-688e0600-c591-11eb-8eb4-bb0ec26a81df.PNG)
 
